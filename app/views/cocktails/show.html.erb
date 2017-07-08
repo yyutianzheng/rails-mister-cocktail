@@ -1,0 +1,15 @@
+<div class="show-cocktail">
+  <div class="show-cocktail-content">
+    <p> <strong>Name: <%= @cocktail.name %> </strong> </p>
+    <ul>
+      <% @cocktail.ingredients.each do |ingredient| %>
+        <li><%= ingredient.name %></li>
+      <% end %>
+      <% @cocktail.doses.each do |dose| %>
+        <li><%= dose.description %></li>
+      <% end %>
+    </ul>
+    <%= link_to "Creat a dose", new_cocktail_dose_path(@cocktail), class: "show-cocktail-link" %>
+    <%= link_to 'Delete', cocktail_path(@cocktail), method: :delete %>
+ </div>
+</div>
