@@ -38,4 +38,10 @@ class CocktailsController < ApplicationController
     redirect_to cocktails_path
   end
 
+  private
+
+  def product_params
+    params.require(:product).permit(:name, :description, :photo, :photo_cache)
+  end
+
 end
