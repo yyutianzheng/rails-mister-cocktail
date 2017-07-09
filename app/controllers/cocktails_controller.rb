@@ -45,8 +45,8 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.find(params[:id])
   end
 
-  def product_params
-    params.require(:product).permit(:name, :description, :photo, :photo_cache)
+  def cocktail_params
+    params.require(:cocktail).permit(:name, :description, :photo, :photo_cache)
   end
 
 end
