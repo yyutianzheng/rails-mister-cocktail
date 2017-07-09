@@ -1,0 +1,8 @@
+<%= simple_form_for [@cocktail, @dose],
+  html: { class: 'form-inline', id: 'form-doses' } do |f| %>
+
+  <%= f.input :description,
+    label: "quantity, e.g. 50 mL", error:"description is mandatory" %>
+  <%= f.association :ingredient %>
+  <%= f.button :submit %>
+  <% end %>
