@@ -6,8 +6,84 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-  Cocktail.create(name: 'Martini')
-  Cocktail.create(name: 'Vodka')
-  Cocktail.create(name: 'Tequila')
-  Cocktail.create(name: 'Mart')
-  Ingredient.create([{name: 'ice'}, {name: 'juice'} ])
+Cocktail.destroy_all
+cocktail_params =
+[
+  { name: "Manhattan",
+    description:"This cocktail is often used for bartenders \n
+    to show off their creativity. It traditionally calls for Whiskey, sweet \n
+    vermouth and bitters but there are many variations on the recipe. It’s also \n
+    one of five cocktails named for one of the five boroughs of New York.",
+    image_name: "manhattan.jpg",
+    },
+  { name: "Blood and Sand",
+    description: "This long forgotten Prohibition-era cocktail \n
+    is named for the 1922 movie starring Rudolph Valentino. It is the movie which, \n
+    on his death bed, he stated he'd like to be his legacy. Try this drink straight \n
+    up, and toast one of the most revered actors of silent film.",
+    image_name: "blood_and_sand.jpg",
+    },
+  { name: "Martinez",
+    description: "The Martinez is a classic gin and vermouth \n
+    cocktail that led to the creation of the Martini. It uses sweet vermouth and \n
+    maraschino and is a pure delight.",
+    image_name: "martinez.jpg",
+    },
+  { name: "Gimlet",
+    description: "The gimlet is as simple as it is refreshing. Shake \n
+    up gin with fresh lime juice and simple syrup to make this classic cocktail.",
+    image_name: "gimlet",
+    },
+  { name: "Old-Fashioned",
+    description: "One of the great classic bourbon cocktails, \n
+    the Old Fashioned was invented in Louisville, KY. Try bourbon, rye, or a blended \n
+    whiskey in this cocktail. You can also sub one sugar cube for the simple syrup.",
+    image_name: "old_fashioned.jpg",
+    },
+  { name: "Negroni",
+    description: "A tantalizing combination of campari, gin, \n
+    vermouth, soda and lemon. Dare to try dry!",
+    image_name: "negroni",
+    }
+]
+
+cocktail_params.each do |params|
+  Cocktail.create(params)
+end
+
+Ingredient.destroy_all
+ingredient_params =
+[
+  { name: "bourbon whiskey" },
+  { name: "rye whiskey" },
+  { name: "gin" },
+  { name: "Campari" },
+  { name: "maraschino liqueur" },
+  { name: "bitters" },
+  { name: "sweet vermouth" },
+  { name: "lime juice" },
+  { name: "sugar" }
+
+]
+
+ingredient_params.each do |params|
+  Ingredient.create(params)
+end
+
+Dose.destroy_all
+dose_params =
+[
+  { description: "50 mL",
+    cocktail_id: (Cocktail.find_by name: 'Manhattan').id,
+    ingredient_id: (Ingredient.find_by name: 'bourbon whiskey').id },
+  { description: "20 mL",
+    cocktail_id: (Cocktail.find_by name: 'Manhattan').id,
+    ingredient_id: (Ingredient.find_by name: 'sweet vermouth').id },
+  { description: "dash",
+    cocktail_id: (Cocktail.find_by name: 'Manhattan').id,
+    ingredient_id: (Ingredient.find_by name: 'bitters').id }
+]
+
+dose_params.each do |params|
+  Dose.create(params)
+end
