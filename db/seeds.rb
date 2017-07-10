@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 Cocktail.destroy_all
 cocktail_params =
 [
@@ -18,34 +10,34 @@ cocktail_params =
     cocktail.",
     image_name: "Dry-Martini_k6r8nw",
     },
-  { name: "Blood and Sand",
-    description: "This long forgotten Prohibition-era cocktail \n
-    is named for the 1922 movie starring Rudolph Valentino. It is the movie which, \n
-    on his death bed, he stated he'd like to be his legacy. Try this drink straight \n
-    up, and toast one of the most revered actors of silent film.",
-    image_name: "blood_and_sand.jpg",
+  { name: "Marguerite",
+    description: "This old-school Martini goes heavy on the vermouth.",
+    image_name: "marguerite_o6eo03",
     },
-  { name: "Martinez",
-    description: "The Martinez is a classic gin and vermouth \n
-    cocktail that led to the creation of the Martini. It uses sweet vermouth and \n
-    maraschino and is a pure delight.",
-    image_name: "martinez.jpg",
+  { name: "Vesper",
+    description: "Pay tribute to 007 by mixing up his signature Vesper \n
+    cocktail. The drink first appeared in Ian Fleming’s 1953 novel Casino \n
+    Royale when Bond asked for “Three measures of Gordon’s, one of vodka, \n
+    half a measure of Kina Lillet. Shake it very well until it’s ice-cold, \n
+    then add a large thin slice of lemon peel. Got it?",
+    image_name: "vesper-720x720-article_dwlzjl",
     },
-  { name: "Gimlet",
-    description: "The gimlet is as simple as it is refreshing. Shake \n
-    up gin with fresh lime juice and simple syrup to make this classic cocktail.",
-    image_name: "gimlet",
+  { name: "Gypsy Queen",
+    description: "TOne of the earliest vodka-cocktail recipes created in \n
+     the US, this simple tipple dates back to 1938.",
+    image_name: "gypsy-queen_ahqu9f",
     },
-  { name: "Old-Fashioned",
-    description: "One of the great classic bourbon cocktails, \n
-    the Old Fashioned was invented in Louisville, KY. Try bourbon, rye, or a blended \n
-    whiskey in this cocktail. You can also sub one sugar cube for the simple syrup.",
-    image_name: "old_fashioned.jpg",
+  { name: "Dutch Negroni",
+    description: "Dutch genever makes an intriguing version of this \n
+    classic Italian aperitif.",
+    image_name: "prime-directive-720x720-recipe_zhprjz",
     },
-  { name: "Negroni",
-    description: "A tantalizing combination of campari, gin, \n
-    vermouth, soda and lemon. Dare to try dry!",
-    image_name: "negroni",
+  { name: "Prime Directive",
+    description: "It’s the guiding principle for all members of Star \n
+    Trek’s Starfleet: Don’t mess with other civilizations and sully up \n
+    their worlds. Which is a pretty good rule to follow for drinks, too. \n
+    Keep things light and herby with this gin cocktail.",
+    image_name: "dutch-negroni1_j25zzo",
     }
 ]
 
@@ -56,16 +48,19 @@ end
 Ingredient.destroy_all
 ingredient_params =
 [
-  { name: "bourbon whiskey" },
-  { name: "rye whiskey" },
-  { name: "gin" },
+  { name: "Orange Bitters" },
+  { name: "Plymouth Gin" },
+  { name: "Absolut Vodka" },
+  { name: "Russian Standard Vodka" },
+  { name: "Angostura Bitters" },
+  { name: "Dry Vermouth" },
+  { name: "Beefeater Gin" },
+  { name: "Lillet Blanc" },
+  { name: "Bénédictine Liqueur" },
+  { name: "Bols Genever" },
   { name: "Campari" },
-  { name: "maraschino liqueur" },
-  { name: "bitters" },
-  { name: "sweet vermouth" },
-  { name: "lime juice" },
-  { name: "sugar" }
-
+  { name: "Sweet Vermouth" },
+  { name: "Bianco Vermouth" }
 ]
 
 ingredient_params.each do |params|
@@ -75,16 +70,71 @@ end
 Dose.destroy_all
 dose_params =
 [
-  { description: "50 mL",
-    cocktail_id: (Cocktail.find_by name: 'DRY MARTINI').id,
-    ingredient_id: (Ingredient.find_by name: 'bourbon whiskey').id },
-  { description: "20 mL",
-    cocktail_id: (Cocktail.find_by name: 'DRY MARTINI').id,
-    ingredient_id: (Ingredient.find_by name: 'sweet vermouth').id },
-  { description: "dash",
-    cocktail_id: (Cocktail.find_by name: 'DRY MARTINI').id,
-    ingredient_id: (Ingredient.find_by name: 'bitters').id }
+  { description: "2 1⁄2 oz",
+    cocktail_id: (Cocktail.find_by name: 'Dry Martini').id,
+    ingredient_id: (Ingredient.find_by name: 'Beefeater Gin').id },
+  { description: "1⁄2 oz",
+    cocktail_id: (Cocktail.find_by name: 'Dry Martini').id,
+    ingredient_id: (Ingredient.find_by name: 'Dry Vermouth').id },
+  { description: "1 dash",
+    cocktail_id: (Cocktail.find_by name: 'Dry Martini').id,
+    ingredient_id: (Ingredient.find_by name: 'Orange Bitters').id },
+
+  { description: "1 oz",
+    cocktail_id: (Cocktail.find_by name: 'Marguerite').id,
+    ingredient_id: (Ingredient.find_by name: 'Plymouth Gin').id },
+  { description: "1 oz",
+    cocktail_id: (Cocktail.find_by name: 'Marguerite').id,
+    ingredient_id: (Ingredient.find_by name: 'Dry Vermouth').id },
+  { description: "1 dash",
+    cocktail_id: (Cocktail.find_by name: 'Marguerite').id,
+    ingredient_id: (Ingredient.find_by name: 'Orange Bitters').id },
+
+  { description: "3 oz",
+    cocktail_id: (Cocktail.find_by name: 'Vesper').id,
+    ingredient_id: (Ingredient.find_by name: 'Plymouth Gin').id },
+  { description: "1 oz",
+    cocktail_id: (Cocktail.find_by name: 'Vesper').id,
+    ingredient_id: (Ingredient.find_by name: 'Absolut Vodka').id },
+  { description: "1/2 oz",
+    cocktail_id: (Cocktail.find_by name: 'Vesper').id,
+    ingredient_id: (Ingredient.find_by name: 'Lillet Blanc').id },
+
+  { description: "2 oz",
+    cocktail_id: (Cocktail.find_by name: 'Gypsy Queen').id,
+    ingredient_id: (Ingredient.find_by name: 'Russian Standard Vodka').id },
+  { description: "1 oz",
+    cocktail_id: (Cocktail.find_by name: 'Gypsy Queen').id,
+    ingredient_id: (Ingredient.find_by name: 'Bénédictine Liqueur').id },
+  { description: "2 dashes",
+    cocktail_id: (Cocktail.find_by name: 'Gypsy Queen').id,
+    ingredient_id: (Ingredient.find_by name: 'Angostura Bitters').id },
+
+  { description: "1⁄2 oz",
+    cocktail_id: (Cocktail.find_by name: 'Dutch Negroni').id,
+    ingredient_id: (Ingredient.find_by name: 'Bols Genever').id },
+  { description: "1 oz",
+    cocktail_id: (Cocktail.find_by name: 'Dutch Negroni').id,
+    ingredient_id: (Ingredient.find_by name: 'Campari').id },
+  { description: "2 oz",
+    cocktail_id: (Cocktail.find_by name: 'Dutch Negroni').id,
+    ingredient_id: (Ingredient.find_by name: 'Sweet Vermouth').id },
+
+  { description: "2 oz",
+    cocktail_id: (Cocktail.find_by name: 'Prime Directive').id,
+    ingredient_id: (Ingredient.find_by name: 'Plymouth Gin').id },
+  { description: "1 oz",
+    cocktail_id: (Cocktail.find_by name: 'Prime Directive').id,
+    ingredient_id: (Ingredient.find_by name: 'Bianco Vermouth').id },
+  { description: "1/2 oz",
+    cocktail_id: (Cocktail.find_by name: 'Prime Directive').id,
+    ingredient_id: (Ingredient.find_by name: 'Bénédictine Liqueur').id },
+  { description: "1 dash",
+    cocktail_id: (Cocktail.find_by name: 'Prime Directive').id,
+    ingredient_id: (Ingredient.find_by name: 'Angostura Bitters').id },
 ]
+
+
 
 dose_params.each do |params|
   Dose.create(params)
