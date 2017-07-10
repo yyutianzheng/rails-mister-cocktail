@@ -26,7 +26,7 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.new(cocktail_params)
     respond_to do |format|
       if @cocktail.save
-        format.html { redirect_to @cocktail, notice: 'Cocktail was successfully created.' }
+        format.html { redirect_to cocktails_path, notice: 'Cocktail was successfully created.' }
       else
         format.html { render :new }
       end

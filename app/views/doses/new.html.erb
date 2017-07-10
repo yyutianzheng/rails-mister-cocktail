@@ -1,8 +1,20 @@
-<%= simple_form_for [@cocktail, @dose],
-  html: { class: 'form-inline', id: 'form-doses' } do |f| %>
+<div class="container-create text-center">
+  <h1>Create your new cocktail</h1>
 
-  <%= f.input :description,
-    label: "quantity, e.g. 50 mL", error:"description is mandatory" %>
-  <%= f.association :ingredient %>
-  <%= f.button :submit %>
+
+
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+
+    <% if @dose.errors.any? %>
+      <% @dose.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    <% end %>
+    <%= f.input :description, placeholder: "6oz" %>
+    <%= f.association :ingredient, collection: Ingredient.all %>
+    <%= f.submit 'Create', class: "btn btn-primary" %>
   <% end %>
+</div>
+<div class="text-center">
+  <%= link_to "Let's see the result", cocktails_path, class:"btn-create" %>
+</div>
