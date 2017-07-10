@@ -9,12 +9,14 @@
 Cocktail.destroy_all
 cocktail_params =
 [
-  { name: "Manhattan",
-    description:"This cocktail is often used for bartenders \n
-    to show off their creativity. It traditionally calls for Whiskey, sweet \n
-    vermouth and bitters but there are many variations on the recipe. It’s also \n
-    one of five cocktails named for one of the five boroughs of New York.",
-    image_name: "manhattan.jpg",
+  { name: "Dry Martini",
+    description:"The Dry Martini is a classic cocktail that, \n
+    like a tailored suit, is timeless. Although the original of the tipple \n
+    is unclear, the Dry Martini has maintained a place in cocktail history \n
+    due to being easy to use and endlessly sophisticated. Elegant for the \n
+    fancy and boozy for the heavy-handed, this potation is truly the everyman’s
+    cocktail.",
+    image_name: "Dry-Martini_k6r8nw",
     },
   { name: "Blood and Sand",
     description: "This long forgotten Prohibition-era cocktail \n
@@ -74,13 +76,13 @@ Dose.destroy_all
 dose_params =
 [
   { description: "50 mL",
-    cocktail_id: (Cocktail.find_by name: 'Manhattan').id,
+    cocktail_id: (Cocktail.find_by name: 'DRY MARTINI').id,
     ingredient_id: (Ingredient.find_by name: 'bourbon whiskey').id },
   { description: "20 mL",
-    cocktail_id: (Cocktail.find_by name: 'Manhattan').id,
+    cocktail_id: (Cocktail.find_by name: 'DRY MARTINI').id,
     ingredient_id: (Ingredient.find_by name: 'sweet vermouth').id },
   { description: "dash",
-    cocktail_id: (Cocktail.find_by name: 'Manhattan').id,
+    cocktail_id: (Cocktail.find_by name: 'DRY MARTINI').id,
     ingredient_id: (Ingredient.find_by name: 'bitters').id }
 ]
 
