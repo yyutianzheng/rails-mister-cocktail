@@ -8,11 +8,11 @@ cocktail_params =
     due to being easy to use and endlessly sophisticated. Elegant for the \n
     fancy and boozy for the heavy-handed, this potation is truly the everyman’s
     cocktail.",
-    image_name: "Dry-Martini_k6r8nw",
+    remote_photo_url: "http://res.cloudinary.com/dcgz3oher/image/upload/v1499446535/Dry-Martini_k6r8nw.jpg",
     },
   { name: "Marguerite",
     description: "This old-school Martini goes heavy on the vermouth.",
-    image_name: "marguerite_o6eo03",
+    remote_photo_url: "http://res.cloudinary.com/dcgz3oher/image/upload/v1499649732/marguerite_o6eo03.jpg",
     },
   { name: "Vesper",
     description: "Pay tribute to 007 by mixing up his signature Vesper \n
@@ -20,24 +20,24 @@ cocktail_params =
     Royale when Bond asked for “Three measures of Gordon’s, one of vodka, \n
     half a measure of Kina Lillet. Shake it very well until it’s ice-cold, \n
     then add a large thin slice of lemon peel. Got it?",
-    image_name: "vesper-720x720-article_dwlzjl",
+    remote_photo_url: "http://res.cloudinary.com/dcgz3oher/image/upload/v1499649721/vesper-720x720-article_dwlzjl.jpg",
     },
   { name: "Gypsy Queen",
-    description: "TOne of the earliest vodka-cocktail recipes created in \n
+    description: "One of the earliest vodka-cocktail recipes created in \n
      the US, this simple tipple dates back to 1938.",
-    image_name: "gypsy-queen_ahqu9f",
+    remote_photo_url: "http://res.cloudinary.com/dcgz3oher/image/upload/v1499650629/gypsy-queen_ahqu9f.jpg",
     },
   { name: "Dutch Negroni",
     description: "Dutch genever makes an intriguing version of this \n
     classic Italian aperitif.",
-    image_name: "prime-directive-720x720-recipe_zhprjz",
+    remote_photo_url: "http://res.cloudinary.com/dcgz3oher/image/upload/v1499652621/dutch-negroni1_j25zzo.jpg",
     },
   { name: "Prime Directive",
     description: "It’s the guiding principle for all members of Star \n
     Trek’s Starfleet: Don’t mess with other civilizations and sully up \n
     their worlds. Which is a pretty good rule to follow for drinks, too. \n
     Keep things light and herby with this gin cocktail.",
-    image_name: "dutch-negroni1_j25zzo",
+    remote_photo_url: "http://res.cloudinary.com/dcgz3oher/image/upload/v1499652621/prime-directive-720x720-recipe_zhprjz.jpg",
     }
 ]
 

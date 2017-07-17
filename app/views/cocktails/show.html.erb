@@ -1,15 +1,36 @@
-<div class="show-cocktail">
-  <div class="show-cocktail-content">
-    <p> <strong>Name: <%= @cocktail.name %> </strong> </p>
+
+<div class="media">
+  <div class="media-body">
+    <div class="media-section">
+      <%= image_tag(@cocktail.photo,height: 400, width: 400, crop: :fit) %>
+    </div>
+    <div class="media-section">
+      <p> <strong>Name: </strong><%= @cocktail.name %> </p>
+      <p><strong> Description: </strong> <%= @cocktail.description %></p>
+   </div>
+  </div>
+  <div class="media-aside">
+    <div class="media-section">
     <ul>
+    <strong>Ingredients:</strong>
       <% @cocktail.ingredients.each do |ingredient| %>
         <li><%= ingredient.name %></li>
       <% end %>
-      <% @cocktail.doses.each do |dose| %>
-        <li><%= dose.description %></li>
-      <% end %>
+      <li><%= link_to "Creat a dose", new_cocktail_dose_path(@cocktail), class: "show-cocktail-link" %></li>
+      <li>  <%= link_to 'Delete this cocktail', cocktail_path(@cocktail), method: :delete %></li>
     </ul>
-    <%= link_to "Creat a dose", new_cocktail_dose_path(@cocktail), class: "show-cocktail-link" %>
-    <%= link_to 'Delete', cocktail_path(@cocktail), method: :delete %>
- </div>
-</div>
+    </div>
+  </div>
+     <div class="media-aside">
+     <div class="media-section">
+      <ul id="ingredient-amount">
+          <% @cocktail.doses.each do |dose| %>
+        <li><%= dose.description %></li>
+        <% end %>
+    </ul>
+    </div>
+    </div>
+    </div>
+
+
+

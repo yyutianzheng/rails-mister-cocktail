@@ -1,0 +1,32 @@
+.media {
+  display: flex;
+  margin: 100px;
+}
+.media-body {
+  flex: 1 2 auto;
+  height: 600px;
+    width: 50%;
+  padding-top: 50px;
+}
+
+.media-aside {
+  padding-top: 50px;
+  flex: 0 0 200px;
+  align-self: stretch;
+}
+.media-section {
+  margin: 40px auto;
+}
+.media-section:first-child {
+  margin-top: 0;
+}
+.media-section:last-child {
+  margin-bottom: 0;
+}
+.media-section li{
+  list-style-type: none;
+}
+
+#ingredient-amount{
+ margin-top:20px;
+}
